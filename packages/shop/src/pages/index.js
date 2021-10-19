@@ -1,16 +1,15 @@
 import React from 'react'
-import { ItemCard, ItemCardWrapper } from '@lerna-monorepo/shared-ui'
+
+import { graphql } from 'gatsby';
 
 const IndexPage = ({ data }) => {
   const edges = data.allShoppingJson.edges
 
-  return(
+  return (
     <div>
-      <h1>Hi people</h1>
-      <ItemCardWrapper>
-        {edges && edges.map(edge => <ItemCard key={edge.node.id} data={edge.node} slug="item" />)}
-      </ItemCardWrapper>
-      <a href={`http://${process.env.BLOG_URL}`}>Go to Blog</a>
+      <h1>Shop pages</h1>
+      {edges &&
+        edges.map(edge => <h1 key={edge.node.id}>{edge.node.title}</h1>)}
     </div>
   )
 }
