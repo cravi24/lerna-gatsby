@@ -7,7 +7,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <div>
-      <h1>Shop pages</h1>
+      <h1>Shop pages V2</h1>
       {edges &&
         edges.map(edge => <h1 key={edge.node.id}>{edge.node.title}</h1>)}
     </div>
